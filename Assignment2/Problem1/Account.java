@@ -32,7 +32,9 @@ public class Account {
 	// required data field, default is 0
 	private double annualInterestRate; 
 	// required data field, default is 0
-	private Date dateCreated = today; 
+	private Date dateCreated = today;
+	// interest rate that is assumed to be the same for all accounts
+	final private double interestRate = .045;
 	
 	// required method to perform withdrawals
 	public void withdraw(double amount) { 
@@ -80,7 +82,7 @@ public class Account {
 	}
 	// required setter method to set private data field
 	public void setIntRate() { 
-		this.annualInterestRate = .045;
+		this.annualInterestRate = interestRate;
 	}
 	// required constructor that accepts specified data field values
 	public Account(int id, double startingBal) { 
