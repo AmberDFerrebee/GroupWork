@@ -1,3 +1,3 @@
 # C210.TeamRed
-Assignemnt 2
+Assignment 2
 Problem 1
