@@ -1,5 +1,4 @@
 package Problem3;
-
 import Problem3.Account;
 import java.util.*;
 
@@ -22,17 +21,22 @@ public class UserAccounts {
 		for (int i = 0; i < userAccountsArray.length; i++) {
 			userAccountsArray[i] = new Account(i, 50.0);
 		}
+		
+		// Start user input and output 
+		
+		// boolean variable to test for while loop
 		boolean startOver = false;
 		do {
+			// Create scanner object to store user input for account id selection
 			Scanner input = new Scanner(System.in);
 			System.out.print("Enter an id: ");
 			int userInputId = input.nextInt();
-			// When the user enters a correct id, the system displays a menu
+			// When the user enters a valid id, the system displays the menu
 			while (userInputId < 0 || userInputId > userAccountsArray.length - 1) {
 				System.out.println("Please enter an existing account id: ");
 				userInputId = input.nextInt();
 			}
-			// Create scanner for menu options
+			// Create scanner object to store user input for menu choice selection
 			Scanner menuChoice = new Scanner(System.in);
 			int choice;
 			do {
