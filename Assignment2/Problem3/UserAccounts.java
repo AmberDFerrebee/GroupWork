@@ -29,7 +29,7 @@ public class UserAccounts {
 			int userInputId = input.nextInt();
 			// When the user enters a correct id, the system displays a menu
 			while (userInputId < 0 || userInputId > userAccountsArray.length - 1) {
-				System.out.println("Please enter an existing account id: ");
+				System.out.print("That Id was not valid.  Please enter an ID:  ");
 				userInputId = input.nextInt();
 			}
 			// Create scanner for menu options
@@ -41,7 +41,7 @@ public class UserAccounts {
 				System.out.println("2: Withdraw");
 				System.out.println("3: Deposit");
 				System.out.println("4: Exit");
-				System.out.println("Enter a choice: ");
+				System.out.print("Enter a choice: ");
 				choice = menuChoice.nextInt();
 				switch (choice) {
 				// use getBal to display balance
@@ -51,14 +51,14 @@ public class UserAccounts {
 				// use withdraw to update with withdrawal amount
 				case 2:
 					Scanner amtToWithdraw = new Scanner(System.in);
-					System.out.println("Enter an amount to withdraw: ");
+					System.out.print("Enter an amount to withdraw: ");
 					double withdrawnAmount = amtToWithdraw.nextDouble();
 					userAccountsArray[userInputId].withdraw(withdrawnAmount);
 					break;
 				// use deposit to update with deposit amount
 				case 3:
 					Scanner amtToDeposit = new Scanner(System.in);
-					System.out.println("Enter an amount to deposit: ");
+					System.out.print("Enter an amount to deposit: ");
 					double depositedAmount = amtToDeposit.nextDouble();
 					userAccountsArray[userInputId].deposit(depositedAmount);
 					break;
