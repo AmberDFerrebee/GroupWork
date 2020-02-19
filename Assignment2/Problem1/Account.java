@@ -1,5 +1,4 @@
 package Problem1;
-
 import java.util.*;
 import java.text.*;
 
@@ -23,16 +22,14 @@ import java.text.*;
 
 public class Account {
 	
-	// created this final variable so that the initial date is finalized
-	private Date today = new Date();
+	// required data field, default is today's date
+	private Date dateCreated = new Date();
 	// required data field, default is 0
 	private int id; 
 	// required data field, default is 0
 	private double balance; 
 	// required data field, default is 0
 	private double annualInterestRate; 
-	// required data field, default is 0
-	private Date dateCreated = today;
 	// interest rate that is assumed to be the same for all accounts
 	final private double interestRate = .045;
 	
@@ -56,7 +53,7 @@ public class Account {
 	}
 	// required method to return date created in String format
 	public String getDateCreated() { 
-		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 		String dateToStr = format.format(this.dateCreated);
 		return dateToStr;
 	}
