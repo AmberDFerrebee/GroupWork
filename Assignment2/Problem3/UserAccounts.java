@@ -1,7 +1,9 @@
 package Problem3;
 import Problem3.Account;
 import java.util.*;
-
+package account;
+import account.Account;
+import java.util.*;
 
 /*
  * @author Red Team
@@ -28,18 +30,18 @@ public class UserAccounts {
         boolean startOver = false;
         do {
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter an id: ");
+        System.out.print("Enter an ID: ");
         int userInputId = input.nextInt();
         // When the user enters a correct id, the system displays a menu
         while (userInputId < 0 || userInputId > userAccountsArray.length-1) {
-            System.out.print("Please enter an existing account id: ");
+            System.out.print("That was not a valid ID.  Please enter an ID");
             userInputId = input.nextInt();            
         }
         // Create scanner for menu options
         Scanner menuChoice = new Scanner(System.in);
         int choice;
         do {
-            System.out.println("Main Menu");
+            System.out.println("Main menu");
             System.out.println("1: Check Balance");
             System.out.println("2: Withdraw");
             System.out.println("3: Deposit");
