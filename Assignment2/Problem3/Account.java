@@ -23,16 +23,26 @@ import java.text.*;
 
 public class Account {
 	
-	// created this final variable so that the initial date is finalized
-	private Date today = new Date();
+	// required data field, default is today's date
+	private Date dateCreated = new Date();
 	// required data field, default is 0
 	private int id; 
 	// required data field, default is 0
 	private double balance; 
 	// required data field, default is 0
-	private double annualInterestRate; 
-	// required data field, default is 0
-	private Date dateCreated = today; 
+	private static double annualInterestRate; 
+	
+	// required no-args constructor 
+	public Account() { 
+		annualInterestRate = .045;
+	}
+	
+	// required constructor that accepts specified data field values
+	public Account(int id, double startingBal) { 
+		this.id = id;
+		this.balance = startingBal;
+		
+	}
 	
 	// required method to perform withdrawals
 	public void withdraw(double amount) { 
@@ -44,7 +54,7 @@ public class Account {
 	}
 	// required method to return interest rate
 	public double getMonthlyInterestRate() { 
-		double monthlyIntRate = this.annualInterestRate/12;
+		double monthlyIntRate = annualInterestRate/12;
 		return monthlyIntRate;
 	}
 	// required method to return interest 
@@ -54,7 +64,7 @@ public class Account {
 	}
 	// required method to return date created in String format
 	public String getDateCreated() { 
-		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 		String dateToStr = format.format(this.dateCreated);
 		return dateToStr;
 	}
@@ -76,20 +86,13 @@ public class Account {
 	}
 	// required getter method to return private data field
 	public double getIntRate() { 
-		return this.annualInterestRate;
+		return annualInterestRate;
 	}
 	// required setter method to set private data field
 	public void setIntRate() { 
-		this.annualInterestRate = .045;
+		annualInterestRate = interestRate;
 	}
-	// required constructor that accepts specified data field values
-	public Account(int id, double startingBal) { 
-		this.id = id;
-		this.balance = startingBal;
-		setIntRate();
-	}
-	// required no-args constructor 
-	public Account() { 
-		setIntRate();
-	}
+
+	
 }
+
